@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beneficiary Registration | FCA</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="form-body">
+    <main class="form-stage">
+      <!-- Left branding panel that mirrors the assessment reference. -->
+      <aside class="form-brand-panel">
+        <div class="brand-mark">
+          <div class="brand-mark-inner">
+            <img src="/assets/fca-logo.jpg" alt="FCA logo" class="brand-panel-logo" />
+          </div>
+        </div>
+        <p class="brand-panel-text">Refugee Support Program</p>
+      </aside>
+
+      <section class="form-reference-panel">
+        <!-- Hidden until a successful registration is completed. -->
+        <div id="successAlert" class="alert success-alert hidden" role="alert">
+          <div>
+            <strong>Registration successful.</strong>
+            <span>The beneficiary record has been saved.</span>
+          </div>
+          <button type="button" class="alert-close" id="closeAlert" aria-label="Close alert">x</button>
+        </div>
+
+        <form id="beneficiaryForm" novalidate>
+          <!-- Form heading area. -->
+          <div class="form-header">
+            <h2>Beneficiary Registration Form</h2>
+          </div>
+
+          <!-- Main two-column registration grid. -->
+          <div class="form-grid">
+            <label class="field">
+              <span>First Name <em>*</em></span>
+              <input type="text" name="firstName" placeholder="Enter your First name" />
+              <small class="error-message"></small>
+            </label>
+
+            <label class="field">
+              <span>Last name <em>*</em></span>
+              <input type="text" name="lastName" placeholder="Enter your Last name" />
+              <small class="error-message"></small>
+            </label>
+
+            <label class="field">
+              <span>Date of birth <em>*</em></span>
+              <input type="text" name="dateOfBirth" placeholder="YYYY / MM / DD" />
+              <small class="error-message"></small>
+            </label>
+
+            <label class="field">
+              <span>Place of Birth <em>*</em></span>
+              <input type="text" name="placeOfBirth" placeholder="Enter your place of residence" />
+              <small class="error-message"></small>
+            </label>
+
+            <fieldset class="field gender-fieldset field-full">
+              <legend>Gender</legend>
+              <div class="horizontal-options">
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="Male" />
+                  <span>Male</span>
+                </label>
+                <label class="radio-option">
+                  <input type="radio" name="gender" value="Female" checked />
+                  <span>Female</span>
+                </label>
+              </div>
+              <small class="error-message"></small>
+            </fieldset>
+
+            <label class="field">
+              <span>Nationality <em>*</em></span>
+              <select name="nationality">
+                <option value="">-- Select Nationality --</option>
+              </select>
+              <small class="error-message"></small>
+            </label>
+
+            <label class="field">
+              <span>Marital status <em>*</em></span>
+              <select name="maritalStatus">
+                <option value="">-- Select Marital status --</option>
+              </select>
+              <small class="error-message"></small>
+            </label>
+
+            <label class="field">
+              <span>Settlement camp <em>*</em></span>
+              <select name="settlementCamp">
+                <option value="">-- Select settlement camp --</option>
+              </select>
+              <small class="error-message"></small>
+            </label>
+
+            <label class="field">
+              <span>Date of joining Settlement camp <em>*</em></span>
+              <input type="text" name="dateOfJoiningSettlementCamp" placeholder="YYYY / MM / DD" />
+              <small class="error-message"></small>
+            </label>
+
+            <div class="field register-field">
+              <button type="submit" class="primary-button register-button">Register</button>
+            </div>
+
+            <label class="field visually-hidden-field" aria-hidden="true">
+              <!-- Kept in the form for validation logic without showing it in the UI. -->
+              <span>Date of registration <em>*</em></span>
+              <input type="text" name="dateOfRegistration" />
+              <small class="error-message"></small>
+            </label>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,491 @@
+:root {
+  /* Shared FCA color palette used across the landing and registration pages. */
+  --fca-pale-green: #99cc32;
+  --fca-deep-green: #385723;
+  --fca-cream: #f6f4ea;
+  --fca-ink: #203119;
+  --fca-line: #c8d7aa;
+  --fca-danger: #b2352f;
+  --fca-success: #e8f5d2;
+  --fca-shadow: 0 20px 50px rgba(32, 49, 25, 0.16);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--fca-ink);
+  font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+h1,
+h2,
+.eyebrow,
+.primary-button,
+.secondary-button {
+  font-family: "Agency FB", "Arial Narrow", Arial, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+.landing-body {
+  /* Full-screen centered landing layout. */
+  display: grid;
+  place-items: center;
+  background: #99cc32;
+  padding: 24px;
+}
+
+.primary-button,
+.secondary-button,
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  padding: 0 22px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+.primary-button {
+  background: var(--fca-pale-green);
+  color: var(--fca-deep-green);
+  box-shadow: 0 10px 24px rgba(153, 204, 50, 0.24);
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.12);
+  color: inherit;
+  border-color: rgba(255, 255, 255, 0.24);
+}
+
+.primary-button:hover,
+.secondary-button:hover,
+.text-link:hover {
+  transform: translateY(-2px);
+}
+
+.landing-shell {
+  /* Keeps the logo, title, and button stacked in the middle of the page. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 48px);
+}
+
+.landing-mark {
+  display: grid;
+  place-items: center;
+  width: 188px;
+  height: 188px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.landing-mark-inner {
+  width: 130px;
+  height: 130px;
+  display: grid;
+  place-items: center;
+}
+
+.landing-logo {
+  width: 100%;
+  display: block;
+}
+
+.landing-title {
+  margin: 36px 0 38px;
+  color: #fff;
+  font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  font-size: 3.1rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1;
+  text-align: center;
+}
+
+.landing-register-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 284px;
+  min-height: 58px;
+  background: #fff;
+  color: #99cc32;
+  font-family: "Arial Narrow", Arial, sans-serif;
+  font-size: 1.25rem;
+  text-decoration: none;
+  border-radius: 4px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.28);
+}
+
+.form-body {
+  /* Centers the two-panel registration screen on a dark background. */
+  display: grid;
+  place-items: center;
+  background: #1d1c2b;
+  padding: 28px;
+}
+
+.form-stage {
+  /* Main form shell: brand panel on the left, form panel on the right. */
+  display: grid;
+  grid-template-columns: 640px 840px;
+  width: min(1480px, 100%);
+  min-height: 820px;
+  background: #fff;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+}
+
+.form-brand-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  background: #99cc32;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.brand-mark-inner {
+  width: 225px;
+  height: 225px;
+  display: grid;
+  place-items: center;
+}
+
+.brand-panel-logo {
+  width: 100%;
+  display: block;
+}
+
+.brand-panel-text {
+  margin: 44px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  font-size: 3.05rem;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.form-reference-panel {
+  /* Right-side form container. */
+  position: relative;
+  padding: 24px 24px 32px;
+  background: #fff;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+  padding: 16px 18px;
+  border-radius: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.success-alert {
+  background: var(--fca-success);
+  border: 1px solid #a4c86c;
+}
+
+.alert strong,
+.alert span {
+  display: block;
+}
+
+.alert-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--fca-deep-green);
+  color: #fff;
+  cursor: pointer;
+}
+
+.form-header {
+  margin-bottom: 24px;
+}
+
+.form-header h2 {
+  margin: 0;
+  color: #4b5667;
+  font-size: 2.9rem;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.form-grid {
+  /* Two-column grid for the registration fields. */
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 18px;
+  row-gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-full {
+  grid-column: 1 / -1;
+}
+
+.field span,
+.field legend {
+  margin: 0;
+  color: #385723;
+  font-family: "Agency FB", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.field em {
+  font-style: normal;
+  color: #ea5a6b;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 56px;
+  padding: 0 14px;
+  border: 1px solid #dfe3e7;
+  border-radius: 0;
+  background: #fff;
+  color: #6a737c;
+  font: inherit;
+  transition: border-color 150ms ease;
+}
+
+input::placeholder {
+  color: #c4cad1;
+}
+
+select {
+  appearance: none;
+  color: #c4cad1;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #b3d65b 50%),
+    linear-gradient(135deg, #b3d65b 50%, transparent 50%);
+  background-position:
+    calc(100% - 24px) calc(50% - 3px),
+    calc(100% - 16px) calc(50% - 3px);
+  background-size: 8px 8px, 8px 8px;
+  background-repeat: no-repeat;
+  padding-right: 40px;
+}
+
+select.has-value {
+  color: #6a737c;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #99cc32;
+}
+
+.gender-fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.horizontal-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 56px;
+  padding: 8px 78px 8px 28px;
+  border: 1px solid #dfe3e7;
+  background: #fff;
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #707985;
+  font-size: 1.12rem;
+}
+
+.radio-option input {
+  appearance: none;
+  width: 26px;
+  height: 26px;
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  border: 4px solid #77808b;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.radio-option input:checked {
+  border-color: #86b62f;
+  background: radial-gradient(circle, #86b62f 0 48%, #fff 50% 100%);
+}
+
+.error-message {
+  min-height: 14px;
+  color: var(--fca-danger);
+  font-size: 0.82rem;
+  text-align: right;
+}
+
+.field-invalid input,
+.field-invalid select {
+  /* Invalid fields turn red to match the assessment screenshots. */
+  border-color: var(--fca-danger);
+}
+
+.field-invalid .horizontal-options {
+  outline: none;
+  border-color: var(--fca-danger);
+}
+
+.form-actions {
+  justify-content: flex-start;
+  margin-top: 16px;
+}
+
+.register-field {
+  grid-column: 2;
+  justify-content: flex-end;
+  align-self: end;
+  margin-top: 2px;
+}
+
+.register-button {
+  min-width: 360px;
+  min-height: 62px;
+  border-radius: 0;
+  background: #99cc32;
+  color: #fff;
+  font-size: 1.5rem;
+  box-shadow: none;
+}
+
+.text-link {
+  color: var(--fca-pale-green);
+}
+
+.visually-hidden-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  border: 0;
+}
+
+@media (max-width: 1200px) {
+  .form-stage {
+    grid-template-columns: 1fr;
+    max-width: 860px;
+  }
+
+  .form-brand-panel {
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-mark {
+    width: 160px;
+    height: 160px;
+  }
+
+  .landing-mark-inner {
+    width: 112px;
+    height: 112px;
+  }
+
+  .landing-title {
+    font-size: 2.4rem;
+  }
+
+  .landing-register-button {
+    width: min(284px, 100%);
+  }
+
+  .brand-mark {
+    width: 220px;
+    height: 220px;
+  }
+
+  .brand-mark-inner {
+    width: 160px;
+    height: 160px;
+  }
+
+  .field-full {
+    grid-column: auto;
+  }
+
+  .register-field {
+    grid-column: auto;
+  }
+
+  .horizontal-options {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 28px;
+    padding: 8px 14px;
+  }
+
+  .form-actions {
+    justify-content: stretch;
+  }
+
+  .register-button,
+  .primary-button {
+    width: 100%;
+    min-width: 0;
+  }
+}

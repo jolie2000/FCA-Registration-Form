@@ -1,0 +1,13 @@
+{
+  "name": "fca-refugee-support-program",
+  "version": "1.0.0",
+  "private": true,
+  "description": "FCA refugee support program landing page and beneficiary registration system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "mongodb": "^7.1.0"
+  }
+}
